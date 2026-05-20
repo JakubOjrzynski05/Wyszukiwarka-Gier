@@ -73,7 +73,7 @@ int main() {
         cerr << "Brak wynikow w API!" << endl;
         return 1;
     }
-    
+
     cout << "Znaleziono: " 
         << dane["results"].size()
         << " gier" << endl;
@@ -83,7 +83,9 @@ int main() {
         if (licznik++ >= 50) break;
 
         cout << "Nazwa: " << gra["name"] << endl;
-
+        cout << "Znaleziono: " 
+        << dane["results"].size()
+        << " gier" << endl;
         if (gra.contains("rating"))
             cout << "Ocena: " << gra["rating"] << endl;
 
