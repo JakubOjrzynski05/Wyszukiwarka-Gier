@@ -38,7 +38,7 @@ int main() {
         return 1;
     }
 
-    // poprawne kodowanie URL
+    
     char* encoded = curl_easy_escape(curl, Search.c_str(), Search.length());
 
     string url = "https://api.rawg.io/api/games?key=522678a8a5bc4864ae723d1c7f1207dd&search=" + string(encoded);
@@ -59,7 +59,7 @@ int main() {
 
     curl_easy_cleanup(curl);
 
-    // parsowanie JSON
+    
     json dane;
     try {
         dane = json::parse(response);
@@ -86,7 +86,7 @@ int main() {
         if (gra.contains("released") && !gra["released"].is_null())
             cout << "Data wydania: " << gra["released"] << endl;
 
-        // platformy
+        
         if (gra.contains("platforms")) {
             cout << "Platformy: ";
             for (auto& p : gra["platforms"]) {
@@ -95,7 +95,7 @@ int main() {
             cout << endl;
         }
 
-        // losowa cena
+        
         cout << "Cena: " << rand() % 200 + 20 << " zl" << endl;
 
         cout << "----------------------" << endl;
