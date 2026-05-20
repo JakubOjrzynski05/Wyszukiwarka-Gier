@@ -7,7 +7,7 @@
 # if __has_include(<curl/curl.h>)
 # include <curl/curl.h>
 # define HAVE_CURL
-# endif
+#endif
 #endif
 
 #include "json.hpp"
@@ -74,9 +74,11 @@ int main() {
     }
 
     int licznik = 0;
-
+    cout << "Znaleziono: " 
+        << dane["results"].size()
+        << " gier" << endl;
     for (auto& gra : dane["results"]) {
-        if (licznik++ >= 25) break;
+        if (licznik++ >= 50) break;
 
         cout << "Nazwa: " << gra["name"] << endl;
 
