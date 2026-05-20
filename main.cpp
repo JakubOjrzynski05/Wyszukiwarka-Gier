@@ -4,10 +4,10 @@
 #include <ctime>
 
 #ifdef __has_include
-#  if __has_include(<curl/curl.h>)
-#    include <curl/curl.h>
-#    define HAVE_CURL
-#  endif
+# if __has_include(<curl/curl.h>)
+# include <curl/curl.h>
+# define HAVE_CURL
+# endif
 #endif
 
 #include "json.hpp"
@@ -76,7 +76,7 @@ int main() {
     int licznik = 0;
 
     for (auto& gra : dane["results"]) {
-        if (licznik++ >= 5) break;
+        if (licznik++ >= 25) break;
 
         cout << "Nazwa: " << gra["name"] << endl;
 
