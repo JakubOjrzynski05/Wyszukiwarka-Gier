@@ -42,8 +42,9 @@ int main() {
     char* encoded = curl_easy_escape(curl, Search.c_str(), Search.length());
 
     string url = "https://api.rawg.io/api/games?key=522678a8a5bc4864ae723d1c7f1207dd&search="
+    + "&search="
     + string(encoded) 
-    + "&page_size=50";
+    + "&page_size=50&ordering=-released";
 
     curl_free(encoded);
     
@@ -83,7 +84,7 @@ int main() {
     int licznik = 0;
     
     for (auto& gra : dane["results"]) {
-        if (licznik++ >= 50) break;
+        if (licznik++ >= 20) break;
 
         cout << "Nazwa: " << gra["name"] << endl;
         
