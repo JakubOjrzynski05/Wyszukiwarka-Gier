@@ -41,8 +41,11 @@ int main() {
     
     char* encoded = curl_easy_escape(curl, Search.c_str(), Search.length());
 
-    string url = "https://api.rawg.io/api/games?key=522678a8a5bc4864ae723d1c7f1207dd&search=" + string(encoded);
-    curl_free(encoded) + "&page_size=50";
+    string url = "https://api.rawg.io/api/games?key=522678a8a5bc4864ae723d1c7f1207dd&search="
+    + string(encoded) 
+    + "&page_size=50";
+
+    curl_free(encoded);
     
 
     string response;
