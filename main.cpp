@@ -73,11 +73,12 @@ int main() {
         cerr << "Brak wynikow w API!" << endl;
         return 1;
     }
-
-    int licznik = 0;
+    
     cout << "Znaleziono: " 
         << dane["results"].size()
         << " gier" << endl;
+    int licznik = 0;
+    
     for (auto& gra : dane["results"]) {
         if (licznik++ >= 50) break;
 
