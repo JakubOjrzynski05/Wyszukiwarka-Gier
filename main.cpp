@@ -22,7 +22,7 @@ size_t WriteCallback(void* contents, size_t size, size_t nmemb, string* output) 
 }
 
 int main() {
-    srand(time(NULL)); 
+    
 
     string Search;
     cout << "Podaj nazwe gry: ";
@@ -102,7 +102,7 @@ int main() {
         }
 
         
-        cout << "Cena: " << rand() % 200 + 20 << " zl" << endl;
+        
 
         cout << "----------------------" << endl;
     }
