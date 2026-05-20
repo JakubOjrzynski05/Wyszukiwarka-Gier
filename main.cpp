@@ -86,9 +86,7 @@ int main() {
         if (licznik++ >= 50) break;
 
         cout << "Nazwa: " << gra["name"] << endl;
-        cout << "Znaleziono: " 
-        << dane["results"].size()
-        << " gier" << endl;
+        
         if (gra.contains("rating"))
             cout << "Ocena: " << gra["rating"] << endl;
 
